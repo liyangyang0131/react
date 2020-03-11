@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+    <script src="https://cdn.bootcss.com/element-ui/2.4.7/index.js"></script>
+</head>
+<body>
+    <div id="app">
+        <el-form>
+            <el-form-item label="中文名称" :model="search">
+                <el-select
+                    v-model="search.name"
+                    filterable
+                    multiple
+                    collapse-tags
+                    placeholder="请选择"
+                    style="width:400px"
+                >
+                <el-option label="区域区域区域区域区域一" value="shanghai"></el-option>
+                <el-option label="区域区域区域区域区域二" value="beijing"></el-option>
+                <el-option label="区域区域区域区域区域三" value="guangzhou"></el-option>
+                <el-option label="区域区域区域区域区域四" value="shenzhen"></el-option>
+            </el-select>  
+            </el-form-item>
+        </el-from>
+    </div>
+</body>
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    search: {
+        name:''
+    }
+  }
+})
+
+</script>
+</html>
