@@ -19,3 +19,29 @@ code {
 .blue{
   color:blue
 }
+
+.formTest>div{
+  margin-bottom:20px;
+}
+
+/* ToDoList */
+.container{
+  width:60%;
+  margin:0 auto;
+}
+.header{
+  text-align: center;
+  height:40px;
+  line-height:40px;
+  background-color:#000;
+  color:#fff;
+}
+
+.header input{
+  height:20px;
+  margin-left:40px;
+}
+/* Demo05父子组件传值.js */
+.header05{
+  background-color:#ccc;
+}
