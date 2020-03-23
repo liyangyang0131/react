@@ -41,3 +41,19 @@ http://www.ruanyifeng.com/blog/2016/05/react_router.html
 
 React 入门实例教程
 http://www.ruanyifeng.com/blog/2015/03/react.html
+
+
+
+#webpack配置
+
+执行  npm run eject  如果报错  ：This git repository has untracked files or uncommitted changes:
+先
+
+git add .
+然后
+
+git commit -m "init"
+然后再npm run eject
+
+
+#

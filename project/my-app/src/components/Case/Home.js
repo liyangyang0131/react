@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Link} from 'react-router-dom';
+// import { BrowserRouter as Router, Link} from 'react-router-dom';
 import axios from 'axios'
 import '../../assets/css/case/index.css'
 class Home extends Component {
