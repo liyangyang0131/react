@@ -26,7 +26,11 @@ class Login extends Component {
         this.state = {};
     }
     submit=()=>{
-
+        if(this.refs.username=='admin' && this.refs.password=='123456'){
+            alert(1)
+        }else{
+            alert()
+        }
     }
     render() {
         return (
