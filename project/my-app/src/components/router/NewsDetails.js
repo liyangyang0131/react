@@ -6,8 +6,12 @@ class NewsDetails extends Component {
         this.state = {
             id: '',
         };
+
+        
     }
+    
     componentDidMount() {
+        
         let id = this.props.match.params.id
         this.setState({
             id: id
