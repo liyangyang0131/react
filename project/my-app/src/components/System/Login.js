@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-
+import {BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import '../../assets/css/system/login.scss'
 
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox, Switch } from 'antd';
 
 const layout = {
     labelCol: { span: 6 },
@@ -14,6 +14,16 @@ const tailLayout = {
 
 const onFinish = values => {
     console.log('Success:', values);
+    if (values.username === 'admin' && values.password === '123456') {
+        return (<Route>
+            <Switch>
+            <Redirect to='/home' />
+            </Switch>
+        </Route>);
+        // window.history.push('/home');
+    } else {
+        alert('用户名密码不正确')
+    }
 };
 
 const onFinishFailed = errorInfo => {
@@ -23,15 +33,9 @@ const onFinishFailed = errorInfo => {
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {};   
     }
-    submit=()=>{
-        if(this.refs.username=='admin' && this.refs.password=='123456'){
-            alert(1)
-        }else{
-            alert()
-        }
-    }
+    
     render() {
         return (
             <div className="login">
@@ -44,7 +48,6 @@ class Login extends Component {
                     onFinishFailed={onFinishFailed}
                 >
                     <Form.Item
-                        ref="username"
                         label="Username"
                         name="username"
                         rules={[{ required: true, message: 'Please input your username!' }]}
@@ -53,7 +56,6 @@ class Login extends Component {
                     </Form.Item>
 
                     <Form.Item
-                        ref="password"
                         label="Password"
                         name="password"
                         rules={[{ required: true, message: 'Please input your password!' }]}
@@ -66,7 +68,7 @@ class Login extends Component {
                     </Form.Item>
 
                     <Form.Item {...tailLayout}>
-                        <Button type="primary" htmlType="submit" onClick={this.submit}>
+                        <Button type="primary" htmlType="submit">
                             Submit
                         </Button>
                     </Form.Item>
